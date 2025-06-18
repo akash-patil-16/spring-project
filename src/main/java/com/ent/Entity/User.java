@@ -1,13 +1,8 @@
 package com.ent.Entity;
 
 import com.ent.Model.UserRequest;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.Data;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 @Data
 @Entity
@@ -15,7 +10,8 @@ import jakarta.persistence.Table;
 public class User {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer userId;
     private String userName;
     private String address;
